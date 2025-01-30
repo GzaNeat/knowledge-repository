@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Escuela> 
+ <Estudiante>
+  <Nombre>Juan Pérez</Nombre>
+  <Edad>19</Edad>
+  <Curso>Segundo de Bachillerato</Curso>
+ </Estudiante>
+</Escuela>

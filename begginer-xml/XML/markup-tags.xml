@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<diálogo> <!-- Tag para darle sentido y significado al documento, en este caso es elemento raiz de <saludo> y <pregunta> -->
+<!-- Todo lo que engloba el tag de arriba hasta su cierre, es un diálogo en esta anidación -->
+ <saludo>Hola</saludo> <!-- Elemento/Tag hijo de díalogo, el cual indica que su contenido es "Hola" y su significado (un saludo) -->
+ <saludo>Buen día</saludo> <!-- Elemento hijo de diálogo y el contenido es un saludo -->
+ <pregunta>¿Cómo estás?</pregunta> <!-- Dentro del diálogo, el elemento indica que es una pregunta y su contenido la pregunta en sí -->
+</diálogo> <!-- Cierre del Elemento padre <diálogo> -->

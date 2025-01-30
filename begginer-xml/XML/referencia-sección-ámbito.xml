@@ -1,0 +1,38 @@
+<? xml version="1.0" encoding="UTF-8" standalone="no"?>  <!-- Declaración, el atributo version y su valor/definición: "1.0"; el atributo encoding y su valor: "UTF-16" (el más reciente), que define como se codifican los caracteres a utilizar en este documento; el atributo standalone y su valor: "no" que indica si depende de información proveniente de una fuente externa -->
+
+ <!-- Supongamos que el profesor tiene muchos alumnos, el se encarga de poner las calificaciones manualmente, pero se sobrecarga de trabajo, ya que tiene que poner un comentario obligatoriamente seguido de la nota. Entonces decide automatizar con una herramienta sus comentarios, comentarios que no cambian según la nota que sacan (Nota: En este documento decido simplificar el contexto en cuanto a dos notas en concreto) -->
+
+<!DOCTYPE curso [ <!-- DOCTYPE para declarar entidades, ya que no se requiere uso de XSD todavía -->
+ <!ENTITY comentario-10 "Excelente trabajo, sigue así."> <!-- ENTITY declara la entidad "comentario-10", donde el valor es el comentario -->
+ <!ENTITY comentario-5 "Debes reforzar el tema que entra en este examen."> 
+]>
+
+<curso asignatura="Lenguaje de Marcas">
+ <alumnos> <!-- Ámbito de la sección que está dentro de él -->
+  <alumno id="001"> <!-- Elemento con atributo id, el cual especifica la identificación con el valor "001" -->
+   <calificacion examen="1">10</calificacion>
+    <comentario>&comentario-10;</comentario> <!-- En cada comentario, en el contenido, se especifica la referencia de entidad declarada  -->
+   <calificacion examen="2">10</calificacion>
+    <comentario>&comentario-10;</comentario>
+   <calificacion examen="3">5</calificacion>
+    <comentario>&comentario-5;</comentario>
+  </alumno>
+  <alumno id="021">
+   <calificacion examen="1">10</calificacion>
+    <comentario>&comentario-10;</comentario>
+   <calificacion examen="2">10</calificacion>
+    <comentario>&comentario-10;</comentario>
+   <calificacion examen="3">5</calificacion>
+    <comentario>&comentario-5;</comentario>
+  </alumno>
+  <alumno id="321">
+   <calificacion examen="1">10</calificacion>
+    <comentario>&comentario-10;</comentario>
+   <calificacion examen="2">10</calificacion>
+    <comentario>&comentario-10;</comentario>
+   <calificacion examen="3">5</calificacion>
+    <comentario>&comentario-5;</comentario>
+  </alumno>
+ </alumnos>
+</curso>
+

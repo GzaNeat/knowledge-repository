@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="transformacion.xsl"?> <!-- Transformación de XML a otro formato como HTML con XSLT, el resultado sería que este XML se reflejaría como una página con una tabla que muestra esos errores de manera estructurada -->
+
+<!-- A continuación, cumplimos con la validación como Documento válido, donde está bien el formato y tiene un DTD (Interno porque el DTD está definido dentro del propio documento XML, entre la declaración <!DOCTYPE ... [ ]>) válido -->
+<!DOCTYPE registro_errores [
+ <!ELEMENT registro_errores (error+)>
+ <!ELEMENT error (codigo, mensaje, fecha, ubicacion, detalle)>
+ <!ELEMENT codigo (#PCDATA)>
+ <!ELEMENT mensaje (#PCDATA)>
+ <!ELEMENT fecha (#PCDATA)>
+ <!ELEMENT ubicacion (#PCDATA)>
+ <!ELEMENT detalle (#PCDATA)>
+]>
+
+<registro_errores>
+ <error>
+  <codigo>500</codigo>
+  <mensaje><![CDATA[Error al conectar a la base de datos: <timeout>]]></mensaje> <!-- <![CDATA[ ]>, sirve para añadir caracteres y estos sean ignorados por el validador de XML  -->
+  <fecha>2025-01-19T11:15:00</fecha> <!-- ISO 8601 por defecto para las fechas, donde Tla "T" se usa para separar la fecha de la hora -->
+  <ubicacion>pagina_perdida</ubicacion>
+  <detalle><![CDATA[El usuario intentó acceder a una URL que no existe: /pagina/xyz]]></detalle>
+ </error>
+</registro_errores>

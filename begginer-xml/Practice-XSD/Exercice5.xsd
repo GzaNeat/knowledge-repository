@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:element name="empresa">
+ <xs:complexType>
+  <xs:sequence>
+   <xs:element name="empleado" maxOccurs="unbounded">
+    <xs:complexType>
+     <xs:sequence>
+      <xs:element name="nombre" type="xs:string"/>
+      <xs:element name="apellido" type="xs:string">
+       <xs:restriction base="xs:string">
+        <xs:pattern value="^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$"/> <!-- Asegura que solo haya un apellido, y permita acentuaciones -->
+       </xs:restriction>
+      </xs:element>
+      <xs:element name="fechaNacimiento" type="xs:date"/>
+      <xs:element name="salario" type="xs:decimal">
+       <restriction base="xs:decimal">
+        <xs:minInclusive value="0.0"/> <!-- Evita números negativos en el salario -->
+       </restriction>
+      </xs:element>
+      <xs:element name="activo" type="xs:boolean"/> <!-- Como en este caso en el ejercicio especifican true-false no hace falta ir mas complejo -->
+      <xs:element name="horaEntrada" type="xs:time"/>
+     </xs:sequence>
+     <xs:attribute name="id" type="xs:integer"/> <!-- Atributo "id" para identificación -->
+    </xs:complexType>
+   </xs:element>
+  </xs:sequence>
+ </xs:complexType>
+</xs:element>

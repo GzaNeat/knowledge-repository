@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- Aquí podemos observar que la declaración contiene dos atributos: "version" y "encoding" -->
+<alumno> <!-- Elemento Raíz -->
+ <carrera prestigio="Alto">Computación Cuántica</carrera> <!-- El tag de carrera tiene un atributo "prestigio" con su valor "Alto", con esto se consigue enriquecer la información del tag en cuestión, <carrera> -->
+ <matrícula>654321</matrícula>
+</alumno> <!-- Cierre del elemento Raíz -->

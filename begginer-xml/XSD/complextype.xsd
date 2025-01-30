@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> <!-- Declaración que define la estructura y las reglas de validación de un archivo XML. -->
+ <xs:element name="alumno"> <!-- Nombre es un tipo complejo -->
+  <xs:complexType>
+   <sequence>
+    <xs:element name="nombre" type="xs:string"/> <!-- Tipo sencillo de tipo cadena -->
+    <xs:element name="id" type="xs:string"/>
+    <xs:element name="generacion" type="xs:int"/> <!-- Tipo sencillo de tipo int -->
+   </sequence>
+  </xs:complexType>
+ </xs:element>
+</xs:schema> 

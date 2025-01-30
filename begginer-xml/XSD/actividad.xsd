@@ -1,0 +1,86 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+ <xs:element name="BibliotecaDigital">
+  <xs:complexType> 
+   <xs:sequence>
+    <xs:element name="Libros">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="Libro" maxOccurs="unbounded">
+        <xs:complexType>
+         <xs:sequence>
+          <xs:element name="Titulo" type="xs:string"/>
+          <xs:element name="ISBN" type="xs:integer">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:pattern value="\d{3}-\d{1}-\d{6}-\d{3}-\d{1}"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="Editorial" type="xs:string"/>
+          <xs:element name="FechaPublicacion">
+           <xs:simpleType>
+            <xs:restriction base="xs:date">
+             <xs:maxInclude value="2025-01-16"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="Autor" maxOccurs="unbounded" minOccurs="1">
+           <xs:complexType>
+            <xs:sequence>
+             <xs:element name="Nombre" type="xs:string"/>
+             <xs:element name="Apellidos" type="xs:string"/>
+            </xs:sequence>
+            <xs:atribute name="Género Literario" use="required">
+             <xs:simpleType>
+              <xs:restriction base="xs:string">
+               <xs:enumeration value="Ficción"/>
+               <xs:enumeration value="No Ficción"/>
+               <xs:enumeration value="Educativo"/>
+              </xs:restriction>
+             </xs:simpleType>
+            </xs:atribute>
+            <xs:atribute name="Idioma" use="required">
+             <xs:simpleType>
+              <xs:restriction base="xs:string">
+               <xs:enumeration value="Español"/>
+               <xs:enumeration value="Inglés"/>
+               <xs:enumeration value="Francés"/>
+              </xs:restriction>
+             </xs:simpleType>
+            </xs:atribute>
+           </xs:complexType>
+          </xs:element>
+         </xs:sequence>
+        </xs:complexType>
+       </xs:element> 
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+    <xs:element name="Revistas" maxOccurs="unbounded">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="Título" type="xs:string/">
+       <xs:element name="ISSN" type="xs:integer">
+        <xs:simpleType>
+         <xs:restriction base="xs:string">
+          <xs:pattern value="\d{4}-\d{4}"/>
+         </xs:restriction>
+        </xs:simpleType>
+       </element>
+       <xs:element name="Editor" type="xs:string/">
+      </xs:sequence>
+      <xs:atribute name="Periodicidad" use="required">
+       <xs:simpleType>
+        <xs:restriction base="xs:string">
+         <xs:enumeration value="Mensual"/>
+         <xs:enumeration value="Bimensual"/>
+         <xs:enumeration value="Trimestral"/>
+        </xs:restriction>
+       </xs:simpleType>
+      </xs:atribute>
+     </xs:complexType>
+    </xs:element>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>
